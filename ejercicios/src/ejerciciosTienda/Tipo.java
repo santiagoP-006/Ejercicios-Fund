@@ -1,37 +1,33 @@
 package ejerciciosTienda;
 
 public class Tipo {
-	private boolean tipo;
-	private int iva;
-	
-	//constructor
-	
-	public Tipo(boolean tipo, int iva) {
-		super();
-		this.tipo = tipo;
-		this.iva = iva;
-	}
+    private boolean perecedero;
+    private int iva;
 
-	public boolean isTipo() {
-		return tipo;
-	}
+    // Constructor
+    public Tipo(boolean perecedero, int iva) {
+        this.perecedero = perecedero;
+        this.iva = iva;
+    }
 
-	public void setTipo(boolean tipo) {
-		this.tipo = tipo;
-	}
+    public boolean isPerecedero() {
+        return perecedero;
+    }
 
-	public int getIva() {
-		return iva;
-	}
+    public void setPerecedero(boolean perecedero) {
+        this.perecedero = perecedero;
+    }
 
-	public void setIva(int iva) {
-		this.iva = iva;
-	}
+    public int getIva() {
+        return iva;
+    }
 
-	@Override
-	public String toString() {
-		return "Perecedero: " + this.tipo + ", iva: " + this.iva;
-	}
-	
-	
+    public void setIva(int iva) {
+        this.iva = iva;
+    }
+
+    @Override
+    public String toString() {
+        return "Perecedero: " + (perecedero ? "Sí" : "No") + ". iva: " + this.iva + "%";
+    }
 }
