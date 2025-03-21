@@ -27,18 +27,26 @@ public class Tienda {
 		buscar();
 	}
 	
-	public static void buscar () {
-		
-		System.out.print("Entre el codigo del producto: ");
-		int codigo = teclado.nextInt();
-		
-		for (Productos productos : listaProductos) {
-			if (productos.getCodigo() == codigo ) {
-				System.out.println("Datos producto: "+ productos);
-			}
-		
-		}
-		
+	public static void buscar() {
+	    System.out.print("Entre el codigo del producto: ");
+	    int codigo = teclado.nextInt();
+	    
+	    boolean encontrado = false;
+	    
+	    for (Productos productos : listaProductos) {
+	        if (productos.getCodigo() == codigo) {
+	            encontrado = true;
+	            System.out.println("Datos producto: " + productos);
+	            if (productos.getTipo().isPerecedero()) {
+	                System.out.println("Es perecedero");
+	            } else {
+	                System.out.println("No es perecedero");
+	            }
+	        }
+	    }
+	    if (!encontrado) {
+	        System.out.println("Producto no encontrado");
+	    }
 	}
 	
 }
