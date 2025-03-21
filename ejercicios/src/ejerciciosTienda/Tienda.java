@@ -11,23 +11,23 @@ public class Tienda {
 		
 		Tipo tipo1 =new Tipo (true, 19);
 		Fecha fecha1 =new Fecha (2025, 05, 10);
-		Productos producto1 =new Productos(875, "Jamon", tipo1, fecha1);
+		Productos producto1 =new Productos(875, "Jamon", tipo1, fecha1, 15000, 19, 01);
 	
 		Tipo tipo2 =new Tipo (true, 19);
 		Fecha fecha2 =new Fecha (2025, 05, 11);
-		Productos producto2 =new Productos (785, "Queso", tipo2, fecha2);	
+		Productos producto2 =new Productos (785, "Queso", tipo2, fecha2, 11000, 19, 03);	
 	
 		Tipo tipo3 =new Tipo (false, 19);
-		Productos producto3 = new Productos (7711, "Parlante", tipo3, null);
+		Productos producto3 = new Productos (7711, "Parlante", tipo3, null, 180000, 10, 10);
 		
 		listaProductos.add(producto1);
 		listaProductos.add(producto2);
 		listaProductos.add(producto3);
 		
-		buscar();
+		buscarProducto();
 	}
 	
-	public static void buscar() {
+	public static void buscarProducto() {
 	    System.out.print("Entre el codigo del producto: ");
 	    int codigo = teclado.nextInt();
 	    
@@ -44,6 +44,7 @@ public class Tienda {
 	            }
 	        }
 	    }
+	    
 	    if (!encontrado) {
 	        System.out.println("Producto no encontrado");
 	    }
